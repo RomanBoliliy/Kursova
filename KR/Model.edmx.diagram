@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9356bcbc8be84bf4b1c6acb81e9d6f9f" Name="Diagram1">
+        <EntityTypeShape EntityType="TestModel.Coach" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestModel.Group_Stage" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestModel.Player" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestModel.Round_1" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestModel.Round_2" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestModel.Round_3" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestModel.Round_4" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestModel.Team" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestModel.TournamensWinner" Width="1.5" PointX="3" PointY="23.375" IsExpanded="true" />
+        <AssociationConnector Association="TestModel.FK_Coach_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Group_Stage_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Group_Stage_Team1" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Group_Stage_Team2" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Group_Stage_Team3" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Group_Stage_Team4" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Team_Group_Stage" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Player_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Round_1_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Round_2_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Round_3_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_Round_4_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TestModel.FK_TournamensWinner_Team" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TestModel.Round_5" Width="1.5" PointX="3" PointY="26.75" />
+        <AssociationConnector Association="TestModel.FK_Round_5_Team" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище TestModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Coach">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="nchar" MaxLength="10" />
+    <Property Name="Nickname" Type="nchar" MaxLength="10" />
+    <Property Name="Last_Name" Type="nchar" MaxLength="10" />
+    <Property Name="Team_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Group_Stage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Place_1" Type="int" />
+    <Property Name="Place_2" Type="int" />
+    <Property Name="Place_3" Type="int" />
+    <Property Name="Place_4" Type="int" />
+    <Property Name="Place_5" Type="int" />
+    <Property Name="Abbreviature" Type="nchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="nchar" MaxLength="10" />
+    <Property Name="Nickname" Type="nchar" MaxLength="10" />
+    <Property Name="Last_Name" Type="nchar" MaxLength="10" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Position" Type="nchar" MaxLength="10" />
+    <Property Name="Team_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Round_1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Team_ID" Type="int" />
+    <Property Name="Winner" Type="bit" />
+    <Property Name="Low_Bucket" Type="bit" />
+  </EntityType>
+  <EntityType Name="Round_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Team_ID" Type="int" />
+    <Property Name="Winner" Type="bit" />
+    <Property Name="Low_Bucket" Type="bit" />
+  </EntityType>
+  <EntityType Name="Round_3">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Team_ID" Type="int" />
+    <Property Name="Winner" Type="bit" />
+    <Property Name="Low_Bucket" Type="bit" />
+  </EntityType>
+  <EntityType Name="Round_4">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Team_ID" Type="int" />
+    <Property Name="Winner" Type="bit" />
+    <Property Name="Low_Bucket" Type="bit" />
+  </EntityType>
+  <EntityType Name="Round_5">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Team_ID" Type="int" />
+    <Property Name="Winner" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Group_ID" Type="int" />
+    <Property Name="Group_Win_Map" Type="int" />
+    <Property Name="Off_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="TournamensWinner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Team_ID" Type="int" />
+  </EntityType>
+  <Association Name="FK_Coach_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Coach" Type="Self.Coach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Coach">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Stage_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group_Stage">
+        <PropertyRef Name="Place_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Stage_Team1">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group_Stage">
+        <PropertyRef Name="Place_2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Stage_Team2">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group_Stage">
+        <PropertyRef Name="Place_3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Stage_Team3">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group_Stage">
+        <PropertyRef Name="Place_4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Stage_Team4">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group_Stage">
+        <PropertyRef Name="Place_5" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Player_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Player" Type="Self.Player" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Player">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Round_1_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Round_1" Type="Self.Round_1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Round_1">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Round_2_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Round_2" Type="Self.Round_2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Round_2">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Round_3_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Round_3" Type="Self.Round_3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Round_3">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Round_4_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Round_4" Type="Self.Round_4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Round_4">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Round_5_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Round_5" Type="Self.Round_5" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Round_5">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Team_Group_Stage">
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="0..1" />
+    <End Role="Team" Type="Self.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group_Stage">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Team">
+        <PropertyRef Name="Group_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TournamensWinner_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="TournamensWinner" Type="Self.TournamensWinner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TournamensWinner">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Хранилище TestModelContainer">
+    <EntitySet Name="Coach" EntityType="Self.Coach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group_Stage" EntityType="Self.Group_Stage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Round_1" EntityType="Self.Round_1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Round_2" EntityType="Self.Round_2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Round_3" EntityType="Self.Round_3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Round_4" EntityType="Self.Round_4" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Round_5" EntityType="Self.Round_5" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TournamensWinner" EntityType="Self.TournamensWinner" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Coach_Team" Association="Self.FK_Coach_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Coach" EntitySet="Coach" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Stage_Team" Association="Self.FK_Group_Stage_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Stage_Team1" Association="Self.FK_Group_Stage_Team1">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Stage_Team2" Association="Self.FK_Group_Stage_Team2">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Stage_Team3" Association="Self.FK_Group_Stage_Team3">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Stage_Team4" Association="Self.FK_Group_Stage_Team4">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Player_Team" Association="Self.FK_Player_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Player" EntitySet="Player" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Round_1_Team" Association="Self.FK_Round_1_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Round_1" EntitySet="Round_1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Round_2_Team" Association="Self.FK_Round_2_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Round_2" EntitySet="Round_2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Round_3_Team" Association="Self.FK_Round_3_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Round_3" EntitySet="Round_3" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Round_4_Team" Association="Self.FK_Round_4_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Round_4" EntitySet="Round_4" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Round_5_Team" Association="Self.FK_Round_5_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Round_5" EntitySet="Round_5" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Team_Group_Stage" Association="Self.FK_Team_Group_Stage">
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+      <End Role="Team" EntitySet="Team" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TournamensWinner_Team" Association="Self.FK_TournamensWinner_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="TournamensWinner" EntitySet="TournamensWinner" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

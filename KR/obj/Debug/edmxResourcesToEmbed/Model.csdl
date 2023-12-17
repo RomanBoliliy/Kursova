@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Coach">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Nickname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Last_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Team_ID" Type="Int32" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_Coach_Team" FromRole="Coach" ToRole="Team" />
+  </EntityType>
+  <EntityType Name="Group_Stage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Place_1" Type="Int32" />
+    <Property Name="Place_2" Type="Int32" />
+    <Property Name="Place_3" Type="Int32" />
+    <Property Name="Place_4" Type="Int32" />
+    <Property Name="Place_5" Type="Int32" />
+    <Property Name="Abbreviature" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_Group_Stage_Team" FromRole="Group_Stage" ToRole="Team" />
+    <NavigationProperty Name="Team1" Relationship="Self.FK_Group_Stage_Team1" FromRole="Group_Stage" ToRole="Team" />
+    <NavigationProperty Name="Team2" Relationship="Self.FK_Group_Stage_Team2" FromRole="Group_Stage" ToRole="Team" />
+    <NavigationProperty Name="Team3" Relationship="Self.FK_Group_Stage_Team3" FromRole="Group_Stage" ToRole="Team" />
+    <NavigationProperty Name="Team4" Relationship="Self.FK_Group_Stage_Team4" FromRole="Group_Stage" ToRole="Team" />
+    <NavigationProperty Name="Team5" Relationship="Self.FK_Team_Group_Stage" FromRole="Group_Stage" ToRole="Team" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Nickname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Last_Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Position" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Team_ID" Type="Int32" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_Player_Team" FromRole="Player" ToRole="Team" />
+  </EntityType>
+  <EntityType Name="Round_1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Team_ID" Type="Int32" />
+    <Property Name="Winner" Type="Boolean" />
+    <Property Name="Low_Bucket" Type="Boolean" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_Round_1_Team" FromRole="Round_1" ToRole="Team" />
+  </EntityType>
+  <EntityType Name="Round_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Team_ID" Type="Int32" />
+    <Property Name="Winner" Type="Boolean" />
+    <Property Name="Low_Bucket" Type="Boolean" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_Round_2_Team" FromRole="Round_2" ToRole="Team" />
+  </EntityType>
+  <EntityType Name="Round_3">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Team_ID" Type="Int32" />
+    <Property Name="Winner" Type="Boolean" />
+    <Property Name="Low_Bucket" Type="Boolean" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_Round_3_Team" FromRole="Round_3" ToRole="Team" />
+  </EntityType>
+  <EntityType Name="Round_4">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Team_ID" Type="Int32" />
+    <Property Name="Winner" Type="Boolean" />
+    <Property Name="Low_Bucket" Type="Boolean" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_Round_4_Team" FromRole="Round_4" ToRole="Team" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Group_ID" Type="Int32" />
+    <Property Name="Group_Win_Map" Type="Int32" />
+    <Property Name="Off_ID" Type="Int32" />
+    <NavigationProperty Name="Coach" Relationship="Self.FK_Coach_Team" FromRole="Team" ToRole="Coach" />
+    <NavigationProperty Name="Group_Stage" Relationship="Self.FK_Group_Stage_Team" FromRole="Team" ToRole="Group_Stage" />
+    <NavigationProperty Name="Group_Stage1" Relationship="Self.FK_Group_Stage_Team1" FromRole="Team" ToRole="Group_Stage" />
+    <NavigationProperty Name="Group_Stage2" Relationship="Self.FK_Group_Stage_Team2" FromRole="Team" ToRole="Group_Stage" />
+    <NavigationProperty Name="Group_Stage3" Relationship="Self.FK_Group_Stage_Team3" FromRole="Team" ToRole="Group_Stage" />
+    <NavigationProperty Name="Group_Stage4" Relationship="Self.FK_Group_Stage_Team4" FromRole="Team" ToRole="Group_Stage" />
+    <NavigationProperty Name="Group_Stage5" Relationship="Self.FK_Team_Group_Stage" FromRole="Team" ToRole="Group_Stage" />
+    <NavigationProperty Name="Player" Relationship="Self.FK_Player_Team" FromRole="Team" ToRole="Player" />
+    <NavigationProperty Name="Round_1" Relationship="Self.FK_Round_1_Team" FromRole="Team" ToRole="Round_1" />
+    <NavigationProperty Name="Round_2" Relationship="Self.FK_Round_2_Team" FromRole="Team" ToRole="Round_2" />
+    <NavigationProperty Name="Round_3" Relationship="Self.FK_Round_3_Team" FromRole="Team" ToRole="Round_3" />
+    <NavigationProperty Name="Round_4" Relationship="Self.FK_Round_4_Team" FromRole="Team" ToRole="Round_4" />
+    <NavigationProperty Name="TournamensWinner" Relationship="Self.FK_TournamensWinner_Team" FromRole="Team" ToRole="TournamensWinner" />
+    <NavigationProperty Name="Round_5" Relationship="TestModel.FK_Round_5_Team" FromRole="Team" ToRole="Round_5" />
+  </EntityType>
+  <EntityType Name="TournamensWinner">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Team_ID" Type="Int32" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_TournamensWinner_Team" FromRole="TournamensWinner" ToRole="Team" />
+  </EntityType>
+  <Association Name="FK_Coach_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Coach" Type="Self.Coach" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Coach">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Stage_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group_Stage">
+        <PropertyRef Name="Place_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Stage_Team1">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group_Stage">
+        <PropertyRef Name="Place_2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Stage_Team2">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group_Stage">
+        <PropertyRef Name="Place_3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Stage_Team3">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group_Stage">
+        <PropertyRef Name="Place_4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Stage_Team4">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Group_Stage">
+        <PropertyRef Name="Place_5" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Team_Group_Stage">
+    <End Role="Group_Stage" Type="Self.Group_Stage" Multiplicity="0..1" />
+    <End Role="Team" Type="Self.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group_Stage">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Team">
+        <PropertyRef Name="Group_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Player_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Player" Type="Self.Player" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Player">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Round_1_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Round_1" Type="Self.Round_1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Round_1">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Round_2_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Round_2" Type="Self.Round_2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Round_2">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Round_3_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Round_3" Type="Self.Round_3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Round_3">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Round_4_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Round_4" Type="Self.Round_4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Round_4">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TournamensWinner_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="TournamensWinner" Type="Self.TournamensWinner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TournamensWinner">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TestEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Coach" EntityType="Self.Coach" />
+    <EntitySet Name="Group_Stage" EntityType="Self.Group_Stage" />
+    <EntitySet Name="Player" EntityType="Self.Player" />
+    <EntitySet Name="Round_1" EntityType="Self.Round_1" />
+    <EntitySet Name="Round_2" EntityType="Self.Round_2" />
+    <EntitySet Name="Round_3" EntityType="Self.Round_3" />
+    <EntitySet Name="Round_4" EntityType="Self.Round_4" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Team" EntityType="Self.Team" />
+    <EntitySet Name="TournamensWinner" EntityType="Self.TournamensWinner" />
+    <AssociationSet Name="FK_Coach_Team" Association="Self.FK_Coach_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Coach" EntitySet="Coach" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Stage_Team" Association="Self.FK_Group_Stage_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Stage_Team1" Association="Self.FK_Group_Stage_Team1">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Stage_Team2" Association="Self.FK_Group_Stage_Team2">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Stage_Team3" Association="Self.FK_Group_Stage_Team3">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Stage_Team4" Association="Self.FK_Group_Stage_Team4">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Team_Group_Stage" Association="Self.FK_Team_Group_Stage">
+      <End Role="Group_Stage" EntitySet="Group_Stage" />
+      <End Role="Team" EntitySet="Team" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Player_Team" Association="Self.FK_Player_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Player" EntitySet="Player" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Round_1_Team" Association="Self.FK_Round_1_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Round_1" EntitySet="Round_1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Round_2_Team" Association="Self.FK_Round_2_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Round_2" EntitySet="Round_2" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Round_3_Team" Association="Self.FK_Round_3_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Round_3" EntitySet="Round_3" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Round_4_Team" Association="Self.FK_Round_4_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Round_4" EntitySet="Round_4" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TournamensWinner_Team" Association="Self.FK_TournamensWinner_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="TournamensWinner" EntitySet="TournamensWinner" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(TestModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(TestModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Round_5" EntityType="TestModel.Round_5" />
+    <AssociationSet Name="FK_Round_5_Team" Association="TestModel.FK_Round_5_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Round_5" EntitySet="Round_5" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Round_5">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Team_ID" Type="Int32" />
+    <Property Name="Winner" Type="Boolean" />
+    <NavigationProperty Name="Team" Relationship="TestModel.FK_Round_5_Team" FromRole="Round_5" ToRole="Team" />
+  </EntityType>
+  <Association Name="FK_Round_5_Team">
+    <End Type="TestModel.Team" Role="Team" Multiplicity="0..1" />
+    <End Type="TestModel.Round_5" Role="Round_5" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Round_5">
+        <PropertyRef Name="Team_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
