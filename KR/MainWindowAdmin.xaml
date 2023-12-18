@@ -3,13 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:KR"
         mc:Ignorable="d"
-        Title="MainWindowAdmin" Height="450" Width="1000">
+        Title="MainWindowAdmin" Height="400" Width="800">
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
-        <Border Background="White" MinWidth="300" MaxWidth="450" Margin="15,0,15,0" VerticalAlignment="Center" Padding="10" CornerRadius="25"  Height="56">
+        <Border Background="White" MinWidth="300" MaxWidth="450" Margin="15,0,15,50" VerticalAlignment="Center" Padding="10" CornerRadius="25"  Height="56">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="Gray" ShadowDepth="1"/>
             </Border.Effect>
@@ -18,26 +19,26 @@
             </StackPanel>
         </Border>
 
-        <StackPanel MaxWidth="300" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,700,100"  Height="20" >
-            <Button HorizontalAlignment="Center"  Width="150" Click="Button_Team_Click">
-               Редагувати команди
+        <StackPanel MaxWidth="300" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,600,100"  MinHeight="20"  >
+            <Button HorizontalAlignment="Center"  MaxWidth="200" Click="Button_Team_Click" Style="{StaticResource MaterialDesignOutlinedDarkButton}">
+                Редагувати команди
             </Button>
         </StackPanel>
 
-        <StackPanel MaxWidth="300" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,350,100"  Height="20" >
-            <Button  HorizontalAlignment="Center"  Width="150" Click="Button_Player_Click">
+        <StackPanel MaxWidth="300" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,200,100"  MinHeight="20" >
+            <Button  HorizontalAlignment="Center"  MaxWidth="200" Click="Button_Player_Click" Style="{StaticResource MaterialDesignOutlinedDarkButton}">
                 Редагувати гравців
             </Button>
         </StackPanel>
 
-        <StackPanel MaxWidth="300" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,100"  Height="20" >
-            <Button  HorizontalAlignment="Center"  Width="150" Click="Button_Coach_Click">
+        <StackPanel MaxWidth="300" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="200,0,0,100"  MinHeight="20"   >
+            <Button  HorizontalAlignment="Center"  MaxWidth="200" Click="Button_Coach_Click" Style="{StaticResource MaterialDesignOutlinedDarkButton}">
                 Редагувати тренерів
             </Button>
         </StackPanel>
 
-        <StackPanel MaxWidth="400" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="350,0,0,100"  Height="20" >
-            <Button  HorizontalAlignment="Center" Width="150" Click="Button_Group_Stage_Click">
+        <StackPanel MaxWidth="400" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="600,0,0,100"  MinHeight="20"  >
+            <Button  HorizontalAlignment="Center" MaxWidth="200" Click="Button_Group_Stage_Click" Style="{StaticResource MaterialDesignOutlinedDarkButton}">
                 Редагувати групу
             </Button>
         </StackPanel>

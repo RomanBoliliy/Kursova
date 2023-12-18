@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:KR"
         mc:Ignorable="d"
-        Title="SignIn" Height="450" Width="800">
+        Title="SignIn" Height="550" Width="600">
     <Grid Background="AliceBlue">
         <Border Background="White" MinWidth="350" MaxWidth="450" Margin=" 0" VerticalAlignment="Center" Padding="10" CornerRadius="25">
             <Border.Effect>
@@ -13,17 +14,13 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Вхід" TextAlignment="Center" FontSize="30" FontFamily="Verdana" Margin="20 20 20 0" />
-                <TextBox x:Name="TextBoxLogin"  Margin=" 20 10 20 20" />
-                <PasswordBox  x:Name="PasswordBox"  Margin="20 10 20 20"/>
-                <Button Content="Ввійти" Margin="20 20 20 0" Click="Button_SignIn_Click" />
-                <Button Content="Назад" Margin="20" Click="Button_Back_Click" />
-                <Button Content="Продовжити як гість" Margin="20 0 20 20" Click="Button_Guest_Click" />
+                <TextBox x:Name="TextBoxLogin"  materialDesign:HintAssist.Hint="Введіть логін" Margin=" 20 10 20 20" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <PasswordBox  x:Name="PasswordBox"  materialDesign:HintAssist.Hint="Введіть пароль" Margin="20 10 20 20" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <Button Content="Ввійти" Margin="20 20 20 0" Click="Button_SignIn_Click" Style="{StaticResource MaterialDesignFlatDarkBgButton}" />
+                <Button Content="Назад" Margin="20" Click="Button_Back_Click" Style="{StaticResource MaterialDesignPaperButton}" />
+                <Button Content="Продовжити як гість" Margin="20 0 20 20" Click="Button_Guest_Click" Style="{StaticResource MaterialDesignPaperButton}" />
             </StackPanel>
         </Border>
-
-
-
-
 
     </Grid>
 </Window>

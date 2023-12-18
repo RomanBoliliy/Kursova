@@ -21,9 +21,9 @@
         </Grid.RowDefinitions>
 
 
-        <TextBlock Text="Назва"       Grid.Row="0"></TextBlock>
-        <TextBlock Text="Група"          Grid.Row="1"></TextBlock>
-        <TextBlock Text="Перемог в групі"      Grid.Row="2"></TextBlock>
+        <TextBlock Text="Назва"            TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"  Grid.Row="0"></TextBlock>
+        <TextBlock Text="Група"            TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"     Grid.Row="1"></TextBlock>
+        <TextBlock Text="Перемог в групі"  TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"  Grid.Row="2"></TextBlock>
 
 
 

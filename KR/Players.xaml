@@ -3,32 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:KR"
         mc:Ignorable="d"
-        Title="Players" Height="450" Width="800">
+        Title="Players" Height="475" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="400"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
         <DataGrid x:Name="DGrid" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Team" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Nickname" Binding="{Binding Nickname}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Name" Binding="{Binding First_Name}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Surname" Binding="{Binding Last_Name}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="Position" Binding="{Binding Position}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Команда" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Нікнейм" Binding="{Binding Nickname}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ім'я" Binding="{Binding First_Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилія" Binding="{Binding Last_Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Вік" Binding="{Binding Age}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Позиція" Binding="{Binding Position}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
 
 
-        <Border Background="White" VerticalAlignment="Bottom" MinWidth="350" MaxWidth="450"  Padding="10" CornerRadius="25">
-            <StackPanel >
-                <Button Content="Назад" Margin="10" Click="Button_Back_Click" />
-            </StackPanel>
-        </Border>
+        <StackPanel Grid.Row="1" Margin="0,0,0,12">
+            <Button Content="Назад"  Padding="1"  Click="Button_Back_Click" Style="{StaticResource MaterialDesignPaperButton}" Height="35" Width="800">
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

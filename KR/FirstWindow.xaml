@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:KR"
         mc:Ignorable="d"
-        Title="FirstWindow" Height="450" Width="800">
+        Title="FirstWindow" Height="400" Width="600">
+    
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="59*"/>
@@ -18,24 +20,18 @@
             <StackPanel>
                 <TextBlock Text="Добрий день!" TextAlignment="Center" FontSize="30" FontFamily="Verdana" />
             </StackPanel>
-
         </Border>
 
         <StackPanel MaxWidth="300" VerticalAlignment="Bottom" Margin="0,0,0,100" Grid.ColumnSpan="2" >
-            <Button HorizontalAlignment="Left" MinWidth="100" Click="Button_Regester_Click">
+            <Button HorizontalAlignment="Left" MinWidth="100" Click="Button_Regester_Click" Style="{StaticResource MaterialDesignFlatDarkBgButton}">
                 Регестрація
             </Button>
-
-
-
         </StackPanel>
 
         <StackPanel MaxWidth="300" VerticalAlignment="Bottom" Margin="0,0,0,100" Grid.ColumnSpan="2" >
-
-            <Button  HorizontalAlignment="Right" MinWidth="100" Click="Button_Vhid_Click">
+            <Button  HorizontalAlignment="Right" MinWidth="100" Click="Button_Vhid_Click" Style="{StaticResource MaterialDesignFlatDarkBgButton}">
                 Вхід
             </Button>
-
         </StackPanel>
 
     </Grid>

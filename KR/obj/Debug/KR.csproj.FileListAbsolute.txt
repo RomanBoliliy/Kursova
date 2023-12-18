@@ -54,3 +54,13 @@ C:\Users\Роман\Desktop\KR\KR\KR\obj\Debug\SignUp.g.cs
 C:\Users\Роман\Desktop\KR\KR\KR\obj\Debug\FirstWindow.baml
 C:\Users\Роман\Desktop\KR\KR\KR\obj\Debug\SignIn.baml
 C:\Users\Роман\Desktop\KR\KR\KR\obj\Debug\SignUp.baml
+C:\Users\Роман\Desktop\KR\KR\KR\bin\Debug\MaterialDesignColors.dll
+C:\Users\Роман\Desktop\KR\KR\KR\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Роман\Desktop\KR\KR\KR\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Роман\Desktop\KR\KR\KR\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Роман\Desktop\KR\KR\KR\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Роман\Desktop\KR\KR\KR\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Роман\Desktop\KR\KR\KR\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Роман\Desktop\KR\KR\KR\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Роман\Desktop\KR\KR\KR\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Роман\Desktop\KR\KR\KR\obj\Debug\App.baml

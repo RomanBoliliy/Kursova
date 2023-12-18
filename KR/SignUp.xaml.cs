@@ -60,8 +60,8 @@ namespace KR
 
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.Show();
+            FirstWindow fw = new FirstWindow();
+            fw.Show();
             Hide();
         }
 

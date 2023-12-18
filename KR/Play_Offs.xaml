@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KR"
         mc:Ignorable="d"
-        Title="Play_Offs" Height="500" Width="800" Loaded="Window_Loaded">
-    <Grid>
+        Title="Play_Offs" Height="500" Width="1151" Loaded="Window_Loaded">
+    <Grid Margin="0,0,0,0" Background="AliceBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="177*"/>
-            <ColumnDefinition Width="623*"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="1300"/>
         </Grid.ColumnDefinitions>
 
 
@@ -23,50 +23,48 @@
         </Grid.RowDefinitions>
 
 
-
-
-        <DataGrid x:Name="DGrid1" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0" Margin="0,0,62,0">
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White" VerticalAlignment="Center" VerticalContentAlignment="Center" x:Name="DGrid1" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0" Margin="0,0,1200,0" Grid.ColumnSpan="2" Style="{x:Null}" SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0,1,1,0">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="Round 1" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Раунд 1" Binding="{Binding Team.Name}" Width="*" ></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="DGrid2" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1"  Margin="0,0,62,0">
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White" VerticalAlignment="Center"  VerticalContentAlignment="Center" x:Name="DGrid2" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1"  Margin="0,0,1200,0" Grid.ColumnSpan="2" Style="{x:Null}" SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0,1,1,1">
             <DataGrid.Columns >
                 <DataGridTextColumn  Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="DGrid3" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="2"  Margin="0,0,62,0">
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White"  VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="DGrid3" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1"  Margin="0,98,1200,0" Style="{x:Null}" Grid.ColumnSpan="2" SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0,1,1,0" Grid.RowSpan="2">
             <DataGrid.Columns >
                 <DataGridTextColumn  Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
 
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="DGrid4" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="3" Margin="0,0,62,0">
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White"  VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="DGrid4" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="2" Margin="0,97,1200,0" Grid.ColumnSpan="2" Style="{x:Null}" SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0,1,1,1" Grid.RowSpan="2">
             <DataGrid.Columns >
                 <DataGridTextColumn  Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
 
-        <DataGrid x:Name="DGrid33" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="2"  Margin="115,0,570,0" Grid.ColumnSpan="2">
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White"  VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="DGrid33" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1"  Margin="100,98,1024,0" Grid.Column="1" Style="{x:Null}" SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0,1,1,0" Grid.RowSpan="2">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Раунд 2" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White"  VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="DGrid44" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="2" Margin="100,97,1024,0" Grid.Column="1" Style="{x:Null}" SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0,1,1,1" Grid.RowSpan="2">
             <DataGrid.Columns >
                 <DataGridTextColumn  Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
-
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="DGrid44" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="3" Margin="115,0,570,0" Grid.ColumnSpan="2">
+
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White"  VerticalAlignment="Center" VerticalContentAlignment="Center" x:Name="DGrid111"   AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0" Grid.RowSpan="2" Margin="276,0,824,0" Grid.Column="1" Style="{x:Null}" SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <DataGrid.Columns >
-                <DataGridTextColumn  Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Раунд 3" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
-        <DataGrid x:Name="DGrid111"   AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0" Grid.RowSpan="2" Margin="53,0,455,0" Grid.Column="1">
-            <DataGrid.Columns >
-                <DataGridTextColumn Header="Round 3" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-
-        <DataGrid x:Name="DGrid333" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="2"  Margin="53,0,455,0" Grid.Column="1">
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White"  VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="DGrid333" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="2"  Margin="276,84,824,0" Grid.Column="1" Style="{x:Null}" SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0,1,1,1">
             <DataGrid.Columns >
                 <DataGridTextColumn  Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
 
@@ -75,31 +73,29 @@
 
 
 
-
-        <DataGrid x:Name="DGrid3333" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="2"  Margin="168,0,340,0" Grid.Column="1">
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White"  VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="DGrid3333" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="2"  Margin="476,83,648,0" Grid.Column="1" Style="{x:Null}" SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0,1,1,1" Grid.RowSpan="2">
             <DataGrid.Columns >
-                <DataGridTextColumn  Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Раунд 4" Binding="{Binding Team.Name}"   Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
-        <DataGrid x:Name="DGrid11111"   AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0" Grid.RowSpan="4" Margin="283,0,225,0" Grid.Column="1" >
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White"  VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="DGrid11111"   AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" Margin="651,76,449,0" Grid.Column="1" Style="{x:Null}"  SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="1,1,1,1" Grid.RowSpan="2">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="Round 5" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Раунд 5" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
-        <DataGrid x:Name="DGridW1"   AutoGenerateColumns="False" IsReadOnly="True" Grid.RowSpan="4" Margin="513,0,0,0" Grid.Column="1">
+        <DataGrid GridLinesVisibility="None" Background="AliceBlue" RowBackground="White"  VerticalAlignment="Top" VerticalContentAlignment="Center" x:Name="DGridW1"   AutoGenerateColumns="False" IsReadOnly="True" Grid.RowSpan="2" Margin="851,76,249,0" Grid.Column="1" Style="{x:Null}" Grid.Row="1" SelectionMode="Single" HeadersVisibility="Column" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="1,1,1,1">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="Winner" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Переможець" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
 
-        <Border Background="White" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="350" MaxWidth="450"  Padding="10" CornerRadius="25" Grid.Row="4" Grid.ColumnSpan="2">
-            <StackPanel >
-                <Button Content="Назад" Margin="10" Click="Button_Back_Click" />
-            </StackPanel>
-        </Border>
+
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0,249,0" >
+            <Button Content="Назад"  Padding="1"  Click="Button_Back_Click" Style="{StaticResource MaterialDesignPaperButton}" Height="50" Width="600"/>
+        </StackPanel>
 
     </Grid>
 </Window>

@@ -23,12 +23,12 @@
         </Grid.RowDefinitions>
 
 
-        <TextBlock Text="Команда"       Grid.Row="3"></TextBlock>
-        <TextBlock Text="Ім'я"          Grid.Row="1"></TextBlock>
-        <TextBlock Text="Нікнейм"       Grid.Row="0"></TextBlock>
-        <TextBlock Text="Прізвище"      Grid.Row="2"></TextBlock>
-        <TextBlock Text="Вік"           Grid.Row="4"></TextBlock>
-        <TextBlock Text="Позиція"       Grid.Row="5"></TextBlock>
+        <TextBlock Text="Команда"  TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"     Grid.Row="3"></TextBlock>
+        <TextBlock Text="Ім'я"     TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"     Grid.Row="1"></TextBlock>
+        <TextBlock Text="Нікнейм"   TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"    Grid.Row="0"></TextBlock>
+        <TextBlock Text="Прізвище"   TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"   Grid.Row="2"></TextBlock>
+        <TextBlock Text="Вік"      TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"     Grid.Row="4"></TextBlock>
+        <TextBlock Text="Позиція"    TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"   Grid.Row="5"></TextBlock>
 
         <TextBox MaxLength="10" Grid.Column="1" Grid.Row="0" Text="{Binding Nickname}"></TextBox>
         <TextBox MaxLength="10" Grid.Column="1" Grid.Row="1" Text="{Binding First_Name}"></TextBox>

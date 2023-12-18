@@ -23,11 +23,11 @@
         </Grid.RowDefinitions>
 
 
-        <TextBlock Text="1 місце"       Grid.Row="0"></TextBlock>
-        <TextBlock Text="2 місце"       Grid.Row="1"></TextBlock>
-        <TextBlock Text="3 місце"       Grid.Row="2"></TextBlock>
-        <TextBlock Text="4 місце"       Grid.Row="3"></TextBlock>
-        <TextBlock Text="5 місце"       Grid.Row="4"></TextBlock>
+        <TextBlock Text="1 місце"   TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"    Grid.Row="0"></TextBlock>
+        <TextBlock Text="2 місце"   TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"    Grid.Row="1"></TextBlock>
+        <TextBlock Text="3 місце"   TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"   Grid.Row="2"></TextBlock>
+        <TextBlock Text="4 місце"   TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"   Grid.Row="3"></TextBlock>
+        <TextBlock Text="5 місце"   TextAlignment="Center" VerticalAlignment="Center"  FontSize="24"   Grid.Row="4"></TextBlock>
 
 
         <TextBox MaxLength="10" Grid.Column="1" Grid.Row="0" Text="{Binding Team.ID}"  x:Name="p1"></TextBox>

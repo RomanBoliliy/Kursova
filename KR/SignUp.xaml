@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:KR"
         mc:Ignorable="d"
-        Title="SignUp" Height="450" Width="800">
+        Title="SignUp" Height="550" Width="600">
     
     <Grid Background="AliceBlue">
         <Border Background="White" MinWidth="350" MaxWidth="450" VerticalAlignment="Center" Padding="10" CornerRadius="25">
@@ -14,12 +15,12 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Регістрація" TextAlignment="Center" FontSize="30" FontFamily="Verdana" Margin="20 20 20 0" />
-                <TextBox x:Name="TextBoxLogin"  Margin="10" />
-                <PasswordBox  x:Name="PasswordBox"  Margin="10" />
-                <PasswordBox  x:Name="PasswordBox2" Margin="10" />
-                <Button Content="Зареєструватися" Margin="10" Click="Button_SignUp_Click" />
-                <Button Content="Зареєструватися як адмін" Margin="10" Click="Button_SignUp_Admin_Click" />
-                <Button Content="Назад" Margin="10" Click="Button_Back_Click" />
+                <TextBox x:Name="TextBoxLogin"  Margin="10" materialDesign:HintAssist.Hint="Введіть логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <PasswordBox  x:Name="PasswordBox" materialDesign:HintAssist.Hint="Введіть пароль" Margin="10" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                <PasswordBox  x:Name="PasswordBox2" materialDesign:HintAssist.Hint="Введіть пароль" Margin="10" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+                <Button Content="Зареєструватися" Margin="10" Click="Button_SignUp_Click" Style="{StaticResource MaterialDesignFlatDarkBgButton}"/>
+                <Button Content="Зареєструватися як адмін" Margin="10" Click="Button_SignUp_Admin_Click" Style="{StaticResource MaterialDesignFlatDarkBgButton}" />
+                <Button Content="Назад" Margin="10" Click="Button_Back_Click" Style="{StaticResource MaterialDesignPaperButton}" />
             </StackPanel>
         </Border>
 
