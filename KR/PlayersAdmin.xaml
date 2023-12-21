@@ -15,7 +15,7 @@
             <DataGrid.Columns >
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Команда" Binding="{Binding Team.Name}" Width="*"></DataGridTextColumn>
-                <DataGridTextColumn Header="ікнейм" Binding="{Binding Nickname}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Нікнейм" Binding="{Binding Nickname}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Ім'я" Binding="{Binding First_Name}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Фамилія" Binding="{Binding Last_Name}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Вік" Binding="{Binding Age}" Width="*"></DataGridTextColumn>
