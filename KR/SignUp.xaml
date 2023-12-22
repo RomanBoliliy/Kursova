@@ -14,7 +14,7 @@
                 <DropShadowEffect BlurRadius="30" Color="Gray" ShadowDepth="1"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Регістрація" TextAlignment="Center" FontSize="30" FontFamily="Verdana" Margin="20 20 20 0" />
+                <TextBlock Text="Реєстрація" TextAlignment="Center" FontSize="30" FontFamily="Verdana" Margin="20 20 20 0" />
                 <TextBox x:Name="TextBoxLogin"  Margin="10" materialDesign:HintAssist.Hint="Введіть логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <PasswordBox  x:Name="PasswordBox" materialDesign:HintAssist.Hint="Введіть пароль" Margin="10" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
                 <PasswordBox  x:Name="PasswordBox2" materialDesign:HintAssist.Hint="Введіть пароль" Margin="10" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />

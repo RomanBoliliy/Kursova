@@ -24,7 +24,7 @@
 
         <StackPanel MaxWidth="300" VerticalAlignment="Bottom" Margin="0,0,0,100" Grid.ColumnSpan="2" >
             <Button HorizontalAlignment="Left" MinWidth="100" Click="Button_Regester_Click" Style="{StaticResource MaterialDesignFlatDarkBgButton}">
-                Регестрація
+                Реєстрація
             </Button>
         </StackPanel>
 
